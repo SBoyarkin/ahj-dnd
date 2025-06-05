@@ -80,8 +80,13 @@ body {
   text-align: center;
   align-content: center;
   margin-top: 7px;
+  user-select: none;
 }
 
+
+.g-btn:hover {
+  background-color: #00ef00;
+}
 
 .d-flex {
   padding-top: 7px;

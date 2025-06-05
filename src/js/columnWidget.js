@@ -45,8 +45,7 @@ export class ColumnWidget {
     dFlex.classList.add("d-flex");
     const gBtn = document.createElement("div");
     gBtn.classList.add("g-btn");
-    gBtn.textContent = "add card"
-    gBtn.te
+    gBtn.textContent = "add card";
     const closesBtn = document.createElement("div");
     closesBtn.classList.add("closes-btn");
     dFlex.append(gBtn, closesBtn);
