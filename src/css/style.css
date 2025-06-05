@@ -1,3 +1,90 @@
 body {
-    color: #999;
+  background-color: #0095ff;
+  font-family: Arial;
+}
+.todo {
+  display: flex;
+}
+
+.column {
+  background-color: lightgrey;
+  margin: 5px;
+  border-radius: 6px;
+  width: 100%;
+  padding: 7px;
+}
+
+.title {
+  margin-left: 5px;
+}
+
+.column-item {
+  background-color: white;
+  margin: 7px 0px 7px 0px;
+  border-radius: 4px;
+  padding: 6px;
+}
+
+.column-item:hover {
+  background-color: #ededed;
+
+}
+
+.addItem {
+
+}
+.add-btn {
+  padding: 5px;
+
+  color: #8a8a8a;
+}
+
+.add-btn:hover {
+  color: #636363;
+}
+
+.closes-btn {
+  height: 1.5rem;
+  width: 1.5rem;
+  text-align: center;
+  align-content: center;
+  border-radius: 2px;
+  background-color: red;
+
+  content: "s&#215";
+}
+
+
+.closes-btn:hover {
+    background-color: #ededed;
+}
+
+
+.text-input {
+  border-style: none;
+  -webkit-appearance: none;
+
+  min-height: 3rem;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.g-btn {
+  background-color: #00a100;
+  color: white;
+  border-radius: 3px;
+  width: 6rem;
+  height: 2rem;
+  text-align: center;
+  align-content: center;
+  margin-top: 7px;
+}
+
+
+.d-flex {
+  padding-top: 7px;
+  display: flex;
+  align-items: center;
+
 }
