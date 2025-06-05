@@ -20,14 +20,39 @@ export class ColumnWidget {
       const addItem = document.createElement("div");
       addItem.classList.add("addItem");
       addItem.appendChild(addBtn);
-
       column.append(title, addItem);
-      this._createLocalStorage(e);
 
+      this._createLocalStorage(e);
       this.el.append(column);
+
+      column.addEventListener("click", (e) => {
+        if (e.target.classList.contains("add-btn")) {
+          column.append(this._createInput());
+          addBtn.remove();
+        }
+      });
       console.log(e);
     });
     return "";
+  }
+
+  _createInput() {
+    const element = document.createElement("div");
+    element.classList.add("input");
+    const textInput = document.createElement("input");
+    textInput.classList.add("text-input");
+    const dFlex = document.createElement("div");
+    dFlex.classList.add("d-flex");
+    const gBtn = document.createElement("div");
+    gBtn.classList.add("g-btn");
+    gBtn.textContent = "add card"
+    gBtn.te
+    const closesBtn = document.createElement("div");
+    closesBtn.classList.add("closes-btn");
+    dFlex.append(gBtn, closesBtn);
+
+    element.append(textInput, dFlex);
+    return element;
   }
 
   createItem() {
