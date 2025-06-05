@@ -7,25 +7,43 @@ export class ColumnWidget {
   createCol(el) {
     this.title.forEach((e) => {
       const column = document.createElement("div");
+      column.id = e;
       column.classList.add("column");
       const title = document.createElement("div");
       title.classList.add("title");
       title.textContent = e;
+
+      const addBtn = document.createElement("div");
+      addBtn.classList.add("add-btn");
+      addBtn.textContent = "+ Add another card";
+
       const addItem = document.createElement("div");
       addItem.classList.add("addItem");
-      (addItem.innerHTML =
-        '       <div class="add-btn"> + Add another card</div>\n' +
-        '       <div class="input">\n' +
-        '         <input class="text-input" type="text">\n' +
-        '         <div class="d-flex">\n' +
-        '           <div class="g-btn">Add Card</div>\n' +
-        '           <div class="closes-btn"></div>\n' +
-        "         </div>\n" +
-        "       </div>\n" +
-        "     </div>"),
-        column.append(title);
-      column.append(addItem);
-      this.el.append(column)
+      addItem.appendChild(addBtn);
+
+      column.append(title, addItem);
+      this._createLocalStorage(e);
+
+      this.el.append(column);
+      console.log(e);
     });
+    return "";
+  }
+
+  createItem() {
+    const item = document.createElement("div");
+    item.id = crypto.randomUUID();
+    item.classList.add("column-item");
+  }
+
+  removeItem() {}
+
+  _createLocalStorage(key) {
+    if (key in localStorage) {
+      console.log("Ключ уже существует:", key);
+    } else {
+      localStorage.setItem(key, JSON.stringify([]));
+      console.log("Ключ создан:", key);
+    }
   }
 }

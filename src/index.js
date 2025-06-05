@@ -8,5 +8,4 @@ const todo = document.querySelector(".todo");
 
 const colWindget = new ColumnWidget(todo);
 
-todo.appendChild(colWindget.createCol())
-
+todo.append(colWindget.createCol());
